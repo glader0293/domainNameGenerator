@@ -9,3 +9,33 @@ window.onload = function() {
   //write your code here
   console.log("Hello Rigo from the console!");
 };
+
+
+
+const urlsCreated = () =>{
+  let pronoun = ['the', 'our'];
+  let adj = ['great', 'big'];
+  let noun = ['jogger', 'racoon'];
+
+  let websites = []
+  for (let i = 0; i < pronoun.length; i++) {
+    for (let j = 0; j < adj.length; j++) {
+        for (let k = 0; k < noun.length; k++) {
+            let domain = `${pronoun[i]}${adj[j]}${noun[k]}.com`;
+            websites.push(domain);
+        }
+    }
+}
+  return websites
+}
+
+let ol = document.createElement("ol");
+
+urlsCreated().forEach(item => {
+  let li = document.createElement("li"); 
+  li.textContent = item; 
+  ol.appendChild(li); 
+});
+
+
+document.body.appendChild(ol);
